@@ -9,7 +9,7 @@ failure(){
     echo "Error caused by: $BASH_COMMAND"
 }
 
-#trap 'failure ${LINE_NO} "$BASH_COMMAND"' ERR
+trap 'failure' ERR
 
 USER_ID=$(id -u)
 TIMESTAMP=$(date +"%F-%H-%M-%S")
