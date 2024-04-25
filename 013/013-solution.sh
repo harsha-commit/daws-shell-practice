@@ -8,11 +8,10 @@ chmod 700 ./utility.sh
 
 source ./utility.sh
 
-
-dnf list installed $i &>> $LOGFILE
+dnf list installed mysql &>> $LOGFILE
 if [ $? -ne 0 ]
 then
-    dnf install mysql -y &>> $LOGFILE
+    dnf install mysql2 -y &>> $LOGFILE
 else
     echo -e "mysql already installed...$Y SKIPPING$W"
 fi
