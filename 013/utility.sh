@@ -5,11 +5,11 @@ set -e
 
 failure(){
     echo "File: $0"
-    echo "Error at Line no: $LINE_NO"
+    echo "Error at Line no: $LINENO"
     echo "Error caused by: $BASH_COMMAND"
 }
 
-trap 'failure ${LINE_NO} "$BASH_COMMAND"' ERR
+trap 'failure' ERR
 
 USER_ID=$(id -u)
 TIMESTAMP=$(date +"%F-%H-%M-%S")
