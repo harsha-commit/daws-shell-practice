@@ -20,7 +20,7 @@ G="\e[32m"
 Y="\e[33m"
 W="\e[0m"
 
-PACKAGES=("nodejs" "mysql" "docker")
+PACKAGES=("nodejs" "mysql" "nginx")
 
 CHECK_ROOT(){
     if [ $USER_ID -ne 0 ]
