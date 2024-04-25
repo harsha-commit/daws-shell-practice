@@ -21,6 +21,8 @@ G="\e[32m"
 Y="\e[33m"
 W="\e[0m"
 
+PACKAGES=("nodejs" "mysql" "docker")
+
 CHECK_ROOT(){
     if [ $USER_ID -ne 0 ]
     then
@@ -43,8 +45,8 @@ VALIDATE(){
 }
 
 INSTALL_PACKAGES(){
-    echo "Packages to install: $@"
-    for i in $@
+    echo "Packages to install: $PACKAGES[@]"
+    for i in $PACKAGES[@]
     do
         dnf list installed $i &>> $LOGFILE
         if [ $? -ne 0 ]
@@ -57,4 +59,5 @@ INSTALL_PACKAGES(){
     done
 }
 
-INSTALL_PACKAGES $@
+CHECK_ROOT
+INSTALL_PACKAGES

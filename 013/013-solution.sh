@@ -7,6 +7,3 @@ chmod 700 ./010-solution.sh
 chmod 700 ./utility.sh
 
 source ./utility.sh
-
-CHECK_ROOT
-EXECUTE $@
