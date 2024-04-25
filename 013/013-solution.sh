@@ -8,9 +8,7 @@ chmod 700 ./utility.sh
 
 source ./utility.sh
 
-echo "Packages to install: ${PACKAGES[@]}"
-    for i in ${PACKAGES[@]}
-    do
+
         dnf list installed $i &>> $LOGFILE
         if [ $? -ne 0 ]
         then
@@ -19,4 +17,3 @@ echo "Packages to install: ${PACKAGES[@]}"
         else
             echo -e "$i already installed...$Y SKIPPING$W"
         fi
-    done
