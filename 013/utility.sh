@@ -42,7 +42,7 @@ VALIDATE(){
 }
 
 INSTALL_PACKAGES(){
-    echo "Packages to install: $@"
+    echo -hhib "Packages to install: $@"
     for i in $@
     do
         dnf list installed $i &>> $LOGFILE
