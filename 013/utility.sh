@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Improving utility.sh by using set and trap
+set -e
+trap 'failure ${LINE_NO} "$BASH_COMMAND"' ERR
+
 USER_ID=$(id -u)
 TIMESTAMP=$(date +"%F-%H-%M-%S")
 SCRIPTNAME=$(echo $0 | cut -d '.' -f 1)
@@ -37,7 +41,7 @@ INSTALL_PACKAGES(){
         if [ $? -ne 0 ]
         then
             dnf install $i -y &>> $LOGFILE
-            VALIDATE $? "Installing $i"
+            # VALIDATE $? "Installing $i"
         else
             echo -e "$i already installed...$Y SKIPPING$W"
         fi
