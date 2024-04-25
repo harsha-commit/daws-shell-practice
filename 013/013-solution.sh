@@ -8,6 +8,6 @@ chmod 700 ./utility.sh
 
 source ./utility.sh
 
-CHECK_ROOT
+# CHECK_ROOT
 echo "$@"
 INSTALL_PACKAGES $@
