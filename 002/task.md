@@ -14,5 +14,5 @@ Write a shell script (or use command line) to perform the following
 10. Delete all files
 11. Move to previous directory
 12. Delete 002-practice directory
-13. Delete dummy directory
+13. Delete dummy directory (don't use rm)
 14. List contents
