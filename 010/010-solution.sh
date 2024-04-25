@@ -13,6 +13,7 @@ G="\e[32m"
 Y="\e[33m"
 W="\e[0m"
 
+# Array of packages
 PACKAGES=("nodejs" "mysql" "docker")
 
 CHECK_ROOT(){
@@ -38,6 +39,11 @@ VALIDATE(){
 # Looping arguments
 for i in $@
 do
-    dnf install $i -y &>> $LOGFILE
-    VALIDATE $? "Installing $i"
+    dnf list installed $i
+    if [ $? -ne 0 ]
+    then
+        dnf install $i -y &>> $LOGFILE
+        VALIDATE $? "Installing $i"
+    else
+        echo "$i already installed"
 done
