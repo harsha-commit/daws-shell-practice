@@ -13,7 +13,7 @@ G="\e[32m"
 Y="\e[33m"
 W="\e[0m"
 
-PACKAGES=[ "git" "mysql" "docker" ]
+PACKAGES=("nodejs" "mysql" "docker")
 
 CHECK_ROOT(){
     if [ $USER_ID -ne 0 ]
@@ -36,10 +36,8 @@ VALIDATE(){
 }
 
 # Looping arguments
-for 
-
-dnf install mysql -y &>> $LOGFILE
-VALIDATE $? "Installing MySQL"
- 
-dnf install git -y &>> $LOGFILE
-VALIDATE $? "Installing Git"
+for i in $@
+do
+    dnf install $i -y &>> $LOGFILE
+    VALIDATE $? "Installing $i"
+done
