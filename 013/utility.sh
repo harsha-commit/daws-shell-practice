@@ -42,13 +42,14 @@ VALIDATE(){
 }
 
 INSTALL_PACKAGES(){
+    echo "Packages to install: $@"
     for i in $@
     do
         dnf list installed $i &>> $LOGFILE
         if [ $? -ne 0 ]
         then
             dnf install $i -y &>> $LOGFILE
-            # VALIDATE $? "Installing $i"
+            VALIDATE $? "Installing $i"
         else
             echo -e "$i already installed...$Y SKIPPING$W"
         fi
