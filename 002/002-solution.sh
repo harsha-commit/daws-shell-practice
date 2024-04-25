@@ -10,8 +10,9 @@ DIRECTORY_PATH=$(pwd)
 # Print the current directory
 echo "Current Directory: $DIRECTORY_PATH"
 
-# Create 002-practice directory
+# Create 002-practice directory and dummy directory
 mkdir 002-practice
+mkdir dummy
 
 # Change directory to 002-practice using relative path
 cd ./002-practice
@@ -39,5 +40,8 @@ cd ..
 # Delete 002-practice directory
 rm -r 002-practice
 
-# Delete 002-practice directory
+# Delete dummy directory
+rmdir dummy
+
+# List contents
 ls
