@@ -9,5 +9,17 @@ chmod 700 ./utility.sh
 source ./utility.sh
 
 # CHECK_ROOT
-echo "$@"
-INSTALL_PACKAGES $@
+# echo "$@"
+# INSTALL_PACKAGES $@
+
+for i in $@
+    do
+        dnf list installed $i &>> $LOGFILE
+        if [ $? -ne 0 ]
+        then
+            dnf install $i -y &>> $LOGFILE
+            VALIDATE $? "Installing $i"
+        else
+            echo -e "$i already installed...$Y SKIPPING$W"
+        fi
+    done
