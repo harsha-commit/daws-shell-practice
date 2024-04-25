@@ -30,10 +30,10 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2...$R FAILED$W"
+        echo -e "$2...$R FAILED$W"
         exit 1
     else
-        echo "$2...$G SUCCESS$W"
+        echo -e "$2...$G SUCCESS$W"
     fi
 }
 
@@ -42,12 +42,12 @@ CHECK_ROOT
 # Looping arguments
 for i in $@
 do
-    dnf list installed $i
+    dnf list installed $i &>> $LOGFILE
     if [ $? -ne 0 ]
     then
         dnf install $i -y &>> $LOGFILE
         VALIDATE $? "Installing $i"
     else
-        echo "$i already installed"
+        echo -e "$i already installed...$Y SKIPPING"
     fi
 done
