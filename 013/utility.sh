@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Improving utility.sh by using set and trap
-set -e
+# set -e
 
-failure(){
-    echo "File: $0"
-    echo: "Error at Line no: $LINE_NO"
-    echo: "Error caused by: $BASH_COMMAND"
-}
+# failure(){
+#     echo "File: $0"
+#     echo: "Error at Line no: $LINE_NO"
+#     echo: "Error caused by: $BASH_COMMAND"
+# }
 
-trap 'failure ${LINE_NO} "$BASH_COMMAND"' ERR
+# trap 'failure ${LINE_NO} "$BASH_COMMAND"' ERR
 
 USER_ID=$(id -u)
 TIMESTAMP=$(date +"%F-%H-%M-%S")
