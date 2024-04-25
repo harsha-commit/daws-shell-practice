@@ -56,3 +56,5 @@ INSTALL_PACKAGES(){
         fi
     done
 }
+
+INSTALL_PACKAGES $@
