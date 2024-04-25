@@ -1,15 +1,6 @@
 #!/bin/bash
 
 # Improving utility.sh by using set and trap
-set -e
-
-failure(){
-    echo "File: $0"
-    echo "Error at Line no: $LINENO"
-    echo "Error caused by: $BASH_COMMAND"
-}
-
-trap 'failure' ERR
 
 USER_ID=$(id -u)
 TIMESTAMP=$(date +"%F-%H-%M-%S")
@@ -42,7 +33,7 @@ VALIDATE(){
 }
 
 INSTALL_PACKAGES(){
-    echoo0 "Packages to install: $@"
+    echo "Packages to install: $@"
     for i in $@
     do
         dnf list installed $i &>> $LOGFILE
