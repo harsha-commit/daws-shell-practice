@@ -42,8 +42,8 @@ VALIDATE(){
 }
 
 INSTALL_PACKAGES(){
-    echo "Packages to install: $@"
-    for i in $@
+    echo "Packages to install: $1"
+    for i in $1
     do
         dnf list installed $i &>> $LOGFILE
         if [ $? -ne 0 ]
