@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Improving utility.sh by using set and trap
-# set -e
+set -e
 
 # failure(){
 #     echo "File: $0"
