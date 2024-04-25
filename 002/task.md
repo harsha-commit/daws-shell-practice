@@ -1,5 +1,4 @@
-Assignment (Week 2)
--------------------
+# Assignment (Week 2)
 
 Write a shell script (or use command line) to perform the following
 
