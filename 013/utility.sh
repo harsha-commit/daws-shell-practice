@@ -7,7 +7,6 @@ failure(){
     echo "File: $0"
     echo "Error at Line no: $LINENO"
     echo "Error caused by: $BASH_COMMAND"
-    exit 1
 }
 
 trap 'failure' ERR
