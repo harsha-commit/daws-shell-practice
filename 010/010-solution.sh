@@ -37,6 +37,8 @@ VALIDATE(){
     fi
 }
 
+CHECK_ROOT
+
 # Looping arguments
 for i in $@
 do
