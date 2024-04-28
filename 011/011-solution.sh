@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# FOR REFERENCE ONLY
-
 # RUN THIS IN A RHEL-9 INSTANCE
 
 # Install package, store logs, use functions

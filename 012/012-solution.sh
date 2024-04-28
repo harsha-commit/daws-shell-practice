@@ -1,15 +1,8 @@
 #!/bin/bash
 
-# Improving utility.sh by using set and trap
-set -e
+# RUN THIS IN A RHEL-9 INSTANCE
 
-failure(){
-    echo "File: $0"
-    echo "Error at Line no: $LINENO"
-    echo "Error caused by: $BASH_COMMAND"
-}
-
-trap 'failure' ERR
+# Install package, store logs, use functions
 
 USER_ID=$(id -u)
 TIMESTAMP=$(date +"%F-%H-%M-%S")
@@ -20,6 +13,7 @@ G="\e[32m"
 Y="\e[33m"
 W="\e[0m"
 
+# Array of packages
 PACKAGES=("nodejs" "mysql" "docker")
 
 CHECK_ROOT(){
@@ -43,19 +37,17 @@ VALIDATE(){
     fi
 }
 
-# INSTALL_PACKAGES(){
-#     echo "Packages to install: ${PACKAGES[@]}"
-#     for i in ${PACKAGES[@]}
-#     do
-#         dnf list installed $i &>> $LOGFILE
-#         if [ $? -ne 0 ]
-#         then
-#             dnf install $i -y &>> $LOGFILE
-#             VALIDATE $? "Installing $i"
-#         else
-#             echo -e "$i already installed...$Y SKIPPING$W"
-#         fi
-#     done
-# }
-
 CHECK_ROOT
+
+# Looping arguments
+for i in $@
+do
+    dnf list installed $i &>> $LOGFILE
+    if [ $? -ne 0 ]
+    then
+        dnf install $i -y &>> $LOGFILE
+        VALIDATE $? "Installing $i"
+    else
+        echo -e "$i already installed...$Y SKIPPING$W"
+    fi
+done
