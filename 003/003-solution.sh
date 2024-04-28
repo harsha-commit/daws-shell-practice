@@ -44,6 +44,7 @@ vim users.csv
 
 ## ESCAPE MODE
 
+"
 # Set row numbers
 set nu
 
@@ -73,6 +74,7 @@ set nonu
 
 # Delete everything
 %d
+"
 
 # Change Permission of users.csv (Others get all access)
 chmod ugo+rwx users.csv
