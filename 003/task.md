@@ -2,7 +2,7 @@
 
 Write a shell script (or use command line) to perform the following
 
-1. Download data.csv from https://raw.githubusercontent.com/harsha-commit/daws-shell-practice/main/utilities/data.csv?token=GHSAT0AAAAAACOKJAZFF4BK32PCHS7SAMUYZRKCX3A using curl
+1. Download data.csv using curl from https://raw.githubusercontent.com/harsha-commit/daws-shell-practice/main/utilities/data.csv?token=GHSAT0AAAAAACOKJAZFF4BK32PCHS7SAMUYZRKCX3A
 2. Create prod and test directories
 3. Rename data.csv to users.csv
 4. Make a copy of users.csv and store in /tmp
