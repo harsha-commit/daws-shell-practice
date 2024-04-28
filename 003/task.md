@@ -29,6 +29,7 @@ Write a shell script (or use command line) to perform the following
 8. Replace "ale" with "" all lines, all occurences and ignore case
 9. Remove row numbers
 10. Delete everything
+11. Write and Quit
 
 ## Permissions
 
