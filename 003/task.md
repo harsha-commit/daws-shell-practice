@@ -17,7 +17,7 @@ Write a shell script (or use command line) to perform the following
 13. Print all IP Addresses in the users.csv (don't use numbered fragment)
 14. Open users.csv in vim editor
 
-## ESCAPE MODE
+## Vim - Escape Mode
 
 1. Set row numbers
 2. Search for Benoit from bottom
