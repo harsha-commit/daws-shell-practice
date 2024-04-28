@@ -23,10 +23,10 @@ Write a shell script (or use command line) to perform the following
 2. Search for Benoit from bottom
 3. Search for Hal from top
 4. Remove highlight
-5. Replace a word in line where cursor is
-6. Replace a word in all lines, but only first occurence
-7. Replace a word in specific line, and all occurences (global)
-8. Replace a word in all lines, all occurences and ignore case
+5. Replace "Male" with "male" in line where cursor is
+6. Replace "com" with "in" in all lines, but only first occurence
+7. Replace "a" with "" in 10th line, and all occurences (global)
+8. Replace "ale" with "" all lines, all occurences and ignore case
 9. Remove row numbers
 10. Delete everything
 
